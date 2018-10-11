@@ -1,3 +1,14 @@
-<p>
-  heroes works!
-</p>
+<h1>Héroes <small>Marvel y DC</small></h1>
+<hr>
+<div class="card-columns animated fadeIn fast">
+    <div class="card" *ngFor="let heroe of heroes; let i = index">
+        <img class="card-img-top img-fluid" [src]="heroe.img" alt="">
+        <div class="card-body">
+            <h4 class="card-title">{{ heroe.nombre }}</h4>
+            <p class="card-text">{{ heroe.bio }}</p>
+            <p class="card-text"><small class="text-muted">{{ heroe.aparicion }}</small></p>
+            <button (click)="VerHeroe(i)" type="button" name="" id="" class="btn btn-outline-primary btn-lg btn-block">Ver más</button>
+            <!-- <a class="btn btn-primary" [routerLink]="['/heroe', termino]" routerLinkActive="router-link-active" role="button">Ver más</a> -->
+        </div>
+    </div>
+</div>
